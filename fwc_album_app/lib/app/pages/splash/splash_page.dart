@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/basic.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import 'package:fwc_album_app/app/core/ui/styles/button_styles.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -13,8 +11,32 @@ class SplashPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('SplashPage'),
       ),
-      body: const Center(
-        child: Text('SplashPage'),
+      body: Center(
+        child: Column(
+          children: [
+            ElevatedButton(
+              child: Text('Salvar'),
+              style: ButtonStyles.i.yellowButton,
+              onPressed: () {},
+            ),
+            OutlinedButton(
+              child: Text('Salvar'),
+              style: ButtonStyles.i.yellowOutlineButton,
+              onPressed: () {},
+            ),
+            ElevatedButton(
+              child: Text('Salvar'),
+              style: ButtonStyles.i.primaryButton,
+              onPressed: () {},
+            ),
+            OutlinedButton(
+              child: Text('Salvar'),
+              style: ButtonStyles.i.primaryOutlineButton,
+              onPressed: () {},
+            ),
+            TextField(),
+          ],
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fwc_album_app/app/core/ui/theme/theme_config.dart';
 import 'package:fwc_album_app/app/pages/splash/splash_page.dart';
 
 class FwcAlbumApp extends StatelessWidget {
@@ -9,11 +10,9 @@ class FwcAlbumApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fifa World Cub Album',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeConfig.theme,
       routes: {
-        '/': (_) => SplashPage(),
+        '/': (_) => const SplashPage(),
       },
     );
   }
