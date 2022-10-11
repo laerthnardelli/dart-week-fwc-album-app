@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:fwc_album_app/app/core/ui/styles/button_styles.dart';
+import 'package:fwc_album_app/app/core/ui/widgets/button.dart';
+import 'package:fwc_album_app/app/core/ui/styles/text_styles.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -15,26 +17,36 @@ class SplashPage extends StatelessWidget {
         child: Column(
           children: [
             ElevatedButton(
-              child: Text('Salvar'),
               style: ButtonStyles.i.yellowButton,
               onPressed: () {},
+              child: const Text('Salvar'),
             ),
             OutlinedButton(
-              child: Text('Salvar'),
               style: ButtonStyles.i.yellowOutlineButton,
               onPressed: () {},
+              child: const Text('Salvar'),
             ),
             ElevatedButton(
-              child: Text('Salvar'),
               style: ButtonStyles.i.primaryButton,
               onPressed: () {},
+              child: const Text('Salvar'),
             ),
             OutlinedButton(
-              child: Text('Salvar'),
               style: ButtonStyles.i.primaryOutlineButton,
               onPressed: () {},
+              child: const Text('Salvar'),
             ),
-            TextField(),
+            const TextField(),
+            Button(
+              onPressed: () {},
+              style: ButtonStyles.i.yellowButton,
+              labelStyle: TextStyles.i.textPrimaryFontBold,
+              label: 'Salvar',
+            ),
+            Button.primary(
+              onPressed: () {},
+              label: 'Salvar',
+            )
           ],
         ),
       ),
