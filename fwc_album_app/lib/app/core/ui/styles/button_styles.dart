@@ -55,5 +55,5 @@ class ButtonStyles {
 }
 
 extension ButtonStylesExtensions on BuildContext {
-  ButtonStyles get textStyles => ButtonStyles.i;
+  ButtonStyles get buttonStyles => ButtonStyles.i;
 }
