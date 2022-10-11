@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fwc_album_app/app/core/ui/helpers/loader.dart';
+import 'package:fwc_album_app/app/core/ui/helpers/messages.dart';
 
 import 'package:fwc_album_app/app/core/ui/styles/button_styles.dart';
 import 'package:fwc_album_app/app/core/ui/widgets/button.dart';
@@ -13,7 +14,8 @@ class SplashPage extends StatefulWidget {
   State<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> with Loader {
+class _SplashPageState extends State<SplashPage>
+    with Loader<SplashPage>, Messages<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,15 +30,31 @@ class _SplashPageState extends State<SplashPage> with Loader {
               onPressed: () async {
                 showLoader();
 
-                await Future.delayed(Duration(seconds: 2));
+                await Future.delayed(const Duration(seconds: 2));
                 hideLoader();
               },
               child: const Text('Salvar'),
             ),
             OutlinedButton(
               style: ButtonStyles.i.yellowOutlineButton,
-              onPressed: () {},
-              child: const Text('Salvar'),
+              onPressed: () {
+                showError('Erro no botão outline');
+              },
+              child: const Text('Error'),
+            ),
+            OutlinedButton(
+              style: ButtonStyles.i.yellowOutlineButton,
+              onPressed: () {
+                showInfo('Info no botão outline');
+              },
+              child: const Text('Info'),
+            ),
+            OutlinedButton(
+              style: ButtonStyles.i.yellowOutlineButton,
+              onPressed: () {
+                showSuccess('Success no botão outline');
+              },
+              child: const Text('Success'),
             ),
             ElevatedButton(
               style: ButtonStyles.i.primaryButton,
