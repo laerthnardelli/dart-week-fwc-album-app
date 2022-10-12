@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fwc_album_app/app/core/ui/styles/button_styles.dart';
 import 'package:fwc_album_app/app/core/ui/styles/colors_app.dart';
@@ -86,11 +87,19 @@ class _LoginPageState extends State<LoginPage> {
                           .copyWith(color: Colors.white),
                       TextSpan(
                         text: 'Não possui uma conta?',
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () =>
+                              Navigator.of(context).pushNamed('auth/register'),
                         children: [
                           TextSpan(
                             text: ' Cadastre-se',
                             style: context.textStyles.textSecondaryFontMedium
-                                .copyWith(color: context.colors.yellow),
+                                .copyWith(
+                              color: context.colors.yellow,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () => Navigator.of(context)
+                                  .pushNamed('/auth/register'),
                           ),
                         ],
                       ),
