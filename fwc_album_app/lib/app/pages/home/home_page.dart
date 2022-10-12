@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
         children: [
           ElevatedButton(
             onPressed: () async {
-              //context.get<CustomDio>().get('api/me'); //{"error":"Token could not be parsed from the request.","code":403}
+              //context.get<CustomDio>().get(  'api/me'); //{"error":"Token could not be parsed from the request.","code":403}
               context.get<CustomDio>().auth().get('api/me');
             },
             child: const Text('Testando auth'),

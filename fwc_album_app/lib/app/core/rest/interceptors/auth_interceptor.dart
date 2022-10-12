@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_getit/flutter_getit.dart';
+import 'package:fwc_album_app/app/core/ui/global/global_context.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthInterceptor extends Interceptor {
@@ -11,5 +13,14 @@ class AuthInterceptor extends Interceptor {
     options.headers['Authorization'] = 'Bearer $accessToken';
     handler.next(
         options); //ATENÇÃO - ESSA LINHA TEM QUE TER, CASO CONTRAIO AS REQUISIÇÕES SERÃO ABORTADAS
+  }
+
+  @override
+  void onError(DioError err, ErrorInterceptorHandler handler) {
+    if (err.response?.statusCode == 401) {
+      Injector.get<GlobalContext>().loginExpire();
+    } else {
+      handler.next(err);
+    }
   }
 }
