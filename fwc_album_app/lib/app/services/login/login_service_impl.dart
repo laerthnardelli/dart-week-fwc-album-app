@@ -1,4 +1,4 @@
-import 'package:fwc_album_app/app/repository/auth_repository.dart';
+import 'package:fwc_album_app/app/repository/auth/auth_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import './login_service.dart';
