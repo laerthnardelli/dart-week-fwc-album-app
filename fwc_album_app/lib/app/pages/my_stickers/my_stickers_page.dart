@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/stickers_group.dart';
 import 'widgets/stickers_group_filter.dart';
 import 'widgets/stickers_status_filter.dart';
 
@@ -21,6 +22,11 @@ class MyStickersPage extends StatelessWidget {
                 StickersGroupFilter(),
               ],
             ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate((context, index) {
+              return const StickersGroup();
+            }, childCount: 1),
           )
         ],
       ),
