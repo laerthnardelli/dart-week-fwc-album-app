@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/stickers_group_filter.dart';
+import 'widgets/stickers_status_filter.dart';
+
 class MyStickersPage extends StatelessWidget {
   const MyStickersPage({super.key});
 
@@ -9,7 +12,18 @@ class MyStickersPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Minhas figurinhas'),
       ),
-      body: Container(),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: const [
+                StickersStatusFilter(filterSelected: ''),
+                StickersGroupFilter(),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
