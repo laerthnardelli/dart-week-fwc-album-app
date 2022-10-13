@@ -89,7 +89,9 @@ class _HomePageState extends HomeViewImpl {
                       ),
                       const SizedBox(height: 20),
                       Button(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/my-stickers');
+                        },
                         width: MediaQuery.of(context).size.width * .9,
                         outline: true,
                         style: context.buttonStyles.yellowOutlineButton,
