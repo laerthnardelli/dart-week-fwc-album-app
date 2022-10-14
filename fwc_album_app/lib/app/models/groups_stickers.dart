@@ -1,17 +1,15 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:fwc_album_app/app/models/user_sticker_model.dart';
+import 'user_sticker_model.dart';
 
 class GroupsStickers {
   final int id;
   final String countryCode;
   final String countryName;
-  final String stickersStart;
-  final String stickersEnd;
+  final int stickersStart;
+  final int stickersEnd;
   final List<UserStickerModel> stickers;
   final String flag;
-
   GroupsStickers({
     required this.id,
     required this.countryCode,
@@ -23,7 +21,7 @@ class GroupsStickers {
   });
 
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+    return {
       'id': id,
       'country_code': countryCode,
       'country_name': countryName,
@@ -42,10 +40,7 @@ class GroupsStickers {
       stickersStart: map['stickers_start']?.toInt() ?? 0,
       stickersEnd: map['stickers_end']?.toInt() ?? 0,
       stickers: List<UserStickerModel>.from(
-        (map['stickers'] as List<int>).map<UserStickerModel>(
-          (x) => UserStickerModel.fromMap(x as Map<String, dynamic>),
-        ),
-      ),
+          map['stickers']?.map((x) => UserStickerModel.fromMap(x)) ?? const []),
       flag: map['flag'] ?? '',
     );
   }
