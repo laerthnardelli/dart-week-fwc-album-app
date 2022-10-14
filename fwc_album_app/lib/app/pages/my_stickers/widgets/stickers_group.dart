@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fwc_album_app/app/core/ui/styles/colors_app.dart';
 import 'package:fwc_album_app/app/core/ui/styles/text_styles.dart';
 import 'package:fwc_album_app/app/models/groups_stickers.dart';
+import 'package:fwc_album_app/app/models/user_sticker_model.dart';
 
 class StickersGroup extends StatelessWidget {
   final GroupsStickers group;
@@ -51,8 +52,17 @@ class StickersGroup extends StatelessWidget {
               mainAxisSpacing: 10,
             ),
             itemBuilder: (context, index) {
+              final stickerNumber = '${group.stickersStart + index}';
+              final stickerList = group.stickers
+                  .where((sticker) => sticker.stickerNumber == stickerNumber);
+
+              final sticker = stickerList.isNotEmpty ? stickerList.first : null;
+
               return Sticker(
-                index: index,
+                stickerNumber: stickerNumber,
+                sticker: sticker,
+                countryName: group.countryName,
+                countryCode: group.countryCode,
               );
             },
           ),
@@ -63,19 +73,29 @@ class StickersGroup extends StatelessWidget {
 }
 
 class Sticker extends StatelessWidget {
-  final int index;
-  const Sticker({Key? key, required this.index}) : super(key: key);
+  final String stickerNumber;
+  final UserStickerModel? sticker;
+  final String countryName;
+  final String countryCode;
+
+  const Sticker({
+    super.key,
+    required this.stickerNumber,
+    required this.sticker,
+    required this.countryName,
+    required this.countryCode,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
       child: Container(
-        color: index % 2 == 0 ? context.colors.primary : context.colors.grey,
+        color: sticker != null ? context.colors.primary : context.colors.grey,
         child: Column(
           children: [
             Visibility(
-              visible: index % 2 == 0,
+              visible: (sticker?.duplicate ?? 0) > 0,
               maintainSize: true,
               maintainAnimation: true,
               maintainState: true,
@@ -83,21 +103,21 @@ class Sticker extends StatelessWidget {
                 alignment: Alignment.topRight,
                 padding: const EdgeInsets.all(2),
                 child: Text(
-                  '1',
+                  sticker?.duplicate.toString() ?? '',
                   style: context.textStyles.textSecondaryFontMedium
                       .copyWith(color: context.colors.yellow),
                 ),
               ),
             ),
             Text(
-              'BRA',
+              countryCode,
               style: context.textStyles.textSecondaryFontExtraBold.copyWith(
-                  color: index % 2 == 0 ? Colors.white : Colors.black),
+                  color: sticker != null ? Colors.white : Colors.black),
             ),
             Text(
-              '$index',
+              stickerNumber,
               style: context.textStyles.textSecondaryFontExtraBold.copyWith(
-                  color: index % 2 == 0 ? Colors.white : Colors.black),
+                  color: sticker != null ? Colors.white : Colors.black),
             ),
           ],
         ),
