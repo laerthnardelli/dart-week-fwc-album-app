@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:fwc_album_app/app/pages/my_stickers/presenter/my_stickers_presenter.dart';
+import 'package:fwc_album_app/app/pages/my_stickers/view/my_stickers_view_impl.dart';
 
 import 'widgets/stickers_group.dart';
 import 'widgets/stickers_group_filter.dart';
 import 'widgets/stickers_status_filter.dart';
 
-class MyStickersPage extends StatelessWidget {
-  const MyStickersPage({super.key});
+class MyStickersPage extends StatefulWidget {
+  final MyStickersPresenter presenter;
+  const MyStickersPage({super.key, required this.presenter});
 
+  @override
+  State<MyStickersPage> createState() => _MyStickersPageState();
+}
+
+class _MyStickersPageState extends MyStickersViewImpl {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +33,9 @@ class MyStickersPage extends StatelessWidget {
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate((context, index) {
-              return const StickersGroup();
-            }, childCount: 10),
+              final group = album[index];
+              return StickersGroup(group: group);
+            }, childCount: album.length),
           )
         ],
       ),

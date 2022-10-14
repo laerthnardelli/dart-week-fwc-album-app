@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fwc_album_app/app/core/ui/styles/colors_app.dart';
 import 'package:fwc_album_app/app/core/ui/styles/text_styles.dart';
+import 'package:fwc_album_app/app/models/groups_stickers.dart';
 
 class StickersGroup extends StatelessWidget {
-  const StickersGroup({super.key});
+  final GroupsStickers group;
+
+  const StickersGroup({super.key, required this.group});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +26,8 @@ class StickersGroup extends StatelessWidget {
                   alignment: const Alignment(0, -0.1),
                   widthFactor: 1,
                   heightFactor: 0.1,
-                  child: Image.asset(
-                    'assets/images/flags/BRA.png',
+                  child: Image.network(
+                    group.flag,
                     cacheWidth: (MediaQuery.of(context).size.width * 3).toInt(),
                   ),
                 ),
@@ -34,7 +37,7 @@ class StickersGroup extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(10),
             child: Text(
-              'Brasil',
+              group.countryName,
               style: context.textStyles.titleBlack.copyWith(fontSize: 26),
             ),
           ),
@@ -49,7 +52,7 @@ class StickersGroup extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               return Sticker(
-                index: index + 1,
+                index: index,
               );
             },
           ),

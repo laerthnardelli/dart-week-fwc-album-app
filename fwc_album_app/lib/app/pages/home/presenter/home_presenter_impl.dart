@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class HomePresenterImpl implements HomePresenter {
   final UserRepository userRepository;
 
-  late HomeView _view;
+  late final HomeView _view;
 
   HomePresenterImpl({required this.userRepository});
 
