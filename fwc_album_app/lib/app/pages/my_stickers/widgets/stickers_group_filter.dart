@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_awesome_select/flutter_awesome_select.dart';
 import 'package:fwc_album_app/app/core/ui/styles/text_styles.dart';
 
-class StickersGroupFilter extends StatelessWidget {
-  const StickersGroupFilter({super.key});
+class StickersGroupFilter extends StatefulWidget {
+  final Map<String, String> countries;
+  const StickersGroupFilter({super.key, required this.countries});
 
+  @override
+  State<StickersGroupFilter> createState() => _StickersGroupFilterState();
+}
+
+class _StickersGroupFilterState extends State<StickersGroupFilter> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,10 +27,9 @@ class StickersGroupFilter extends StatelessWidget {
         },
         onChange: (value) {},
         choiceItems: S2Choice.listFrom(
-          source: [
-            {'value': 'BRA', 'title': 'Brasil'},
-            {'value': 'FWC', 'title': 'Fifa World Cup'},
-          ],
+          source: widget.countries.entries
+              .map((e) => {'value': e.key, 'title': e.value})
+              .toList(),
           value: (_, item) => item['value'] ?? '',
           title: (_, item) => item['title'] ?? '',
         ),

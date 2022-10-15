@@ -11,6 +11,8 @@ class MyStickersPresenterImpl implements MyStickersPresenter {
 
   var album = <GroupsStickers>[]; //cache to future filter
 
+  var statusSelected = 'all';
+
   MyStickersPresenterImpl({required this.stickersRepository});
 
   @override
@@ -23,4 +25,11 @@ class MyStickersPresenterImpl implements MyStickersPresenter {
 
   @override
   set view(MyStickersView view) => _view = view;
+
+  @override
+  Future<void> statusFilter(String status) async {
+    statusSelected = status;
+    _view.updateStatusFilter(status);
+    throw UnimplementedError();
+  }
 }

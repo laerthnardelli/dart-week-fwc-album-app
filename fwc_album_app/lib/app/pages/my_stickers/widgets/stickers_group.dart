@@ -6,8 +6,10 @@ import 'package:fwc_album_app/app/models/user_sticker_model.dart';
 
 class StickersGroup extends StatelessWidget {
   final GroupsStickers group;
+  final String statusFilter;
 
-  const StickersGroup({super.key, required this.group});
+  const StickersGroup(
+      {super.key, required this.group, required this.statusFilter});
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +60,25 @@ class StickersGroup extends StatelessWidget {
 
               final sticker = stickerList.isNotEmpty ? stickerList.first : null;
 
-              return Sticker(
+              final stickerWidget = Sticker(
                 stickerNumber: stickerNumber,
                 sticker: sticker,
                 countryName: group.countryName,
                 countryCode: group.countryCode,
               );
+
+              if (statusFilter == 'all') {
+                return stickerWidget;
+              } else if (statusFilter == 'missing') {
+                if (sticker == null) {
+                  return stickerWidget;
+                }
+              } else if (statusFilter == 'repeated') {
+                if (sticker != null && sticker.duplicate > 0) {
+                  return stickerWidget;
+                }
+              }
+              return const SizedBox.shrink();
             },
           ),
         ],
