@@ -43,4 +43,12 @@ abstract class MyStickersViewImpl extends State<MyStickersPage>
       statusFilter = status;
     });
   }
+
+  @override
+  void updateAlbum(List<GroupsStickers> album) {
+    hideLoader();
+    setState(() {
+      this.album = album;
+    });
+  }
 }

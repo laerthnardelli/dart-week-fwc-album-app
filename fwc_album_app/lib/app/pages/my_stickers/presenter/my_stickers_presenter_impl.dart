@@ -13,6 +13,8 @@ class MyStickersPresenterImpl implements MyStickersPresenter {
 
   var statusSelected = 'all';
 
+  List<String>? countries;
+
   MyStickersPresenterImpl({required this.stickersRepository});
 
   @override
@@ -31,5 +33,20 @@ class MyStickersPresenterImpl implements MyStickersPresenter {
     statusSelected = status;
     _view.updateStatusFilter(status);
     throw UnimplementedError();
+  }
+
+  @override
+  void countryFilter(List<String>? countries) {
+    this.countries = countries;
+    if (countries == null) {
+      //Atualizar a tela com todos os grupos
+      _view.updateAlbum(album);
+    } else {
+      //Atualizar a minha lista filtrando os grupos selecionados!!!
+      final albumFilter = [
+        ...album.where((element) => countries.contains(element.countryCode))
+      ];
+      _view.updateAlbum(albumFilter);
+    }
   }
 }
