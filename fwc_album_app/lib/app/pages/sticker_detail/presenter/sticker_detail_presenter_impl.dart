@@ -45,4 +45,16 @@ class StickerDetailPresenterImpl implements StickerDetailPresenter {
     _view.screenLoaded(
         hasSticker, countryCode, stickerNumber, countryName, amount);
   }
+
+  @override
+  void decrementAmount() {
+    if (amount > 1) {
+      _view.updateAmount(--amount);
+    }
+  }
+
+  @override
+  void incrementAmount() {
+    _view.updateAmount(++amount);
+  }
 }

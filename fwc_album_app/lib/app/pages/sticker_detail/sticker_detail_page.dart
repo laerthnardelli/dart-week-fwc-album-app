@@ -51,7 +51,7 @@ class _StickerDetailPageState extends StickerDetailViewImpl {
                   const Spacer(),
                   RoundedButton(
                     icon: Icons.remove,
-                    onPressed: () {},
+                    onPressed: widget.presenter.decrementAmount,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -62,7 +62,7 @@ class _StickerDetailPageState extends StickerDetailViewImpl {
                   ),
                   RoundedButton(
                     icon: Icons.add,
-                    onPressed: () {},
+                    onPressed: widget.presenter.incrementAmount,
                   ),
                 ],
               ),
