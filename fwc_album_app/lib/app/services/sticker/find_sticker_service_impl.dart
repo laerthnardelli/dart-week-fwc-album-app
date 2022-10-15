@@ -10,14 +10,14 @@ class FindStickerServiceImpl implements FindStickerService {
   FindStickerServiceImpl({required this.stickersRepository});
 
   @override
-  Future<StickerModel> execute(String counterCode, String stickerNumber) async {
+  Future<StickerModel> execute(String countryCode, String stickerNumber) async {
     var sticker =
-        await stickersRepository.findStickerByCode(counterCode, stickerNumber);
+        await stickersRepository.findStickerByCode(countryCode, stickerNumber);
 
     if (sticker == null) {
       final registerSticker = RegisterStickerModel(
         name: '',
-        stickerCode: counterCode,
+        stickerCode: countryCode,
         stickerNumber: stickerNumber,
       );
       sticker = await stickersRepository.create(registerSticker);

@@ -1,12 +1,27 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:fwc_album_app/app/core/ui/styles/button_styles.dart';
 import 'package:fwc_album_app/app/core/ui/styles/text_styles.dart';
 import 'package:fwc_album_app/app/core/ui/widgets/button.dart';
 import 'package:fwc_album_app/app/core/ui/widgets/rounded_button.dart';
 
-class StickerDetailPage extends StatelessWidget {
-  const StickerDetailPage({Key? key}) : super(key: key);
+import 'presenter/sticker_detail_presenter.dart';
+import 'view/sticker_detail_view_impl.dart';
 
+class StickerDetailPage extends StatefulWidget {
+  final StickerDetailPresenter presenter;
+
+  StickerDetailPage({
+    Key? key,
+    required this.presenter,
+  }) : super(key: key);
+
+  @override
+  State<StickerDetailPage> createState() => _StickerDetailPageState();
+}
+
+class _StickerDetailPageState extends StickerDetailViewImpl {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,13 +34,15 @@ class StickerDetailPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset('assets/images/sticker_pb.png'),
+              Image.asset(hasSticker
+                  ? 'assets/images/sticker.png'
+                  : 'assets/images/sticker_pb.png'),
               Row(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
-                      'BRA 13',
+                      '$countryCode $stickerNumber',
                       style: context.textStyles.textPrimaryFontBold.copyWith(
                         fontSize: 22,
                       ),
@@ -39,7 +56,7 @@ class StickerDetailPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
                     child: Text(
-                      '1',
+                      '$amount',
                       style: context.textStyles.textSecondaryFontMedium,
                     ),
                   ),
@@ -52,7 +69,7 @@ class StickerDetailPage extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(left: 15, bottom: 10),
                 alignment: Alignment.centerLeft,
-                child: Text('Brasil',
+                child: Text(countryName,
                     style: context.textStyles.textPrimaryFontRegular),
               ),
               Button.primary(
