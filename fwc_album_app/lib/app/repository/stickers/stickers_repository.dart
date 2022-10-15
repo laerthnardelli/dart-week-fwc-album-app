@@ -11,4 +11,6 @@ abstract class StickersRepository {
       RegisterStickerModel
           registerStickerModel); //crete nunca retorna null, ele deve retorna o erro ou o objeto.
 
+  Future<void> registerUserSticker(int stickerId, int amount);
+  Future<void> updateUserSticker(int stickerId, int amount);
 }

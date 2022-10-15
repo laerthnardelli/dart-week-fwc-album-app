@@ -63,4 +63,34 @@ class StickersRepositoryImpl implements StickersRepository {
       throw RepositoyException(message: 'Erro ao registrar figurinha no album');
     }
   }
+
+  @override
+  Future<void> registerUserSticker(int stickerId, int amount) async {
+    try {
+      await dio.auth().post('/api/user/sticker', data: {
+        'id_sticker': stickerId,
+        'amount': amount,
+      });
+    } on DioError catch (e, s) {
+      log('Erro ao inserir figurinha no album do usuário',
+          error: e, stackTrace: s);
+      throw RepositoyException(
+          message: 'Erro ao inserir figurinha no album do usuário');
+    }
+  }
+
+  @override
+  Future<void> updateUserSticker(int stickerId, int amount) async {
+    try {
+      await dio.auth().put('/api/user/sticker', data: {
+        'id_sticker': stickerId,
+        'amount': amount,
+      });
+    } on DioError catch (e, s) {
+      log('Erro ao inserir figurinha no album do usuário',
+          error: e, stackTrace: s);
+      throw RepositoyException(
+          message: 'Erro ao inserir figurinha no album do usuário');
+    }
+  }
 }

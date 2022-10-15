@@ -8,4 +8,9 @@ abstract class StickerDetailView {
   );
 
   void updateAmount(int i);
+
+  void showLoader();
+  void saveSuccess();
+
+  void error(String s);
 }

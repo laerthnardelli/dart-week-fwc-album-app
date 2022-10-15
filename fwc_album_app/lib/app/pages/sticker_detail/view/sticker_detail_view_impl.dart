@@ -61,4 +61,16 @@ abstract class StickerDetailViewImpl extends State<StickerDetailPage>
       this.amount = amount;
     });
   }
+
+  @override
+  void saveSuccess() {
+    hideLoader();
+    Navigator.of(context).pop();
+  }
+
+  @override
+  void error(String message) {
+    hideLoader();
+    showError(message);
+  }
 }

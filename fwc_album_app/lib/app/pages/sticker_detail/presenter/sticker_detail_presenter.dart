@@ -13,4 +13,7 @@ abstract class StickerDetailPresenter extends FwcPresenter<StickerDetailView> {
 
   void incrementAmount();
   void decrementAmount();
+
+  Future<void> saveSticker();
+  Future<void> deleteSticker();
 }
