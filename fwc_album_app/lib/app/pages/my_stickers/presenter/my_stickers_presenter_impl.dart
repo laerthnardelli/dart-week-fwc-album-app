@@ -32,7 +32,6 @@ class MyStickersPresenterImpl implements MyStickersPresenter {
   Future<void> statusFilter(String status) async {
     statusSelected = status;
     _view.updateStatusFilter(status);
-    throw UnimplementedError();
   }
 
   @override
