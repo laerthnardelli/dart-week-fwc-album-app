@@ -15,30 +15,29 @@ Cadastro de usuário, Login, guardar o token autenticado no storare do device, r
 Tecnologias Utilizadas: <br/>
 
 * Flutter
-* ArquiteturaMVP (Model View Presenter),
+* Arquitetura MVP (Model View Presenter),
 * API RESTFULL
 * Dio (Http service)
 * flutter_getit (Injeção de Dependencia)
 * Storage (shared_preferences)
 * validatorless (validação de formulario)
 * flutter_awesome_select (Modal de Filtros)
-* loading_animation_widget (animação de loading de transição entre telas)
-* top_snackbar_flutter
+* loading_animation_widget (animação de loading para transição entre telas)
+* top_snackbar_flutter (notificação para usúario em caso de sucesso ou erro).
 
 Imagens App:
 
-![app-fwc-01](https://user-images.githubusercontent.com/54412289/196200276-85f31ae8-d23e-4b00-bcfa-1baf02899e1e.jpeg)
-![app-fwc-02](https://user-images.githubusercontent.com/54412289/196200291-16e94372-fa76-4612-9dba-bf470a57326c.jpeg)
-![app-fwc-03](https://user-images.githubusercontent.com/54412289/196200306-0b6b4d05-5aea-4d12-adcb-3745ec7f331f.jpeg)
-![app-fwc-04](https://user-images.githubusercontent.com/54412289/196200319-fa3b67d0-03be-44ed-b152-e9a3c2f8edf9.jpeg)
-![app-fwc-05](https://user-images.githubusercontent.com/54412289/196200359-8377b1c2-4d67-42d4-9278-44c3a8d0217e.jpeg)
-![app-fwc-06](https://user-images.githubusercontent.com/54412289/196200371-a1977a5f-ee41-4ec2-ba01-7c253a9aec0a.jpeg)
-![app-fwc-07](https://user-images.githubusercontent.com/54412289/196200381-81d0da64-d0de-410a-b434-2fb3d78cb724.jpeg)
-![app-fwc-08](https://user-images.githubusercontent.com/54412289/196200399-c7a0ba1c-362d-4d66-bec0-08b3de88ce4c.jpeg)
-![app-fwc-09](https://user-images.githubusercontent.com/54412289/196200420-014c489e-8fed-4245-9cc2-ccb376402a1a.jpeg)
-![app-fwc-10](https://user-images.githubusercontent.com/54412289/196200434-e648dc1e-b9dc-46d1-9b94-235430e7b5b4.jpeg)
-![app-fwc-11](https://user-images.githubusercontent.com/54412289/196200457-a4018671-ddd3-4bee-b287-53cb8aeff88f.jpeg)
-
-
+![app-fwc-01](https://user-images.githubusercontent.com/54412289/196203447-d4996736-e8dc-4a04-82c3-ebbc6c00610f.jpg)
+![app-fwc-02](https://user-images.githubusercontent.com/54412289/196203455-11571ad3-8c59-4072-975e-d238cedb66f9.jpg)
+![app-fwc-03](https://user-images.githubusercontent.com/54412289/196203499-f7e3c31f-950c-4b46-ac71-968fd4d49bfa.jpg)
+![app-fwc-04](https://user-images.githubusercontent.com/54412289/196203501-7d43c8e6-02ed-490d-9553-e9b3a5a6d077.jpg)
+![app-fwc-05](https://user-images.githubusercontent.com/54412289/196203505-af35bf10-745a-40a0-9bce-5c9f233aeb16.jpg)
+![app-fwc-06](https://user-images.githubusercontent.com/54412289/196203508-04eb0d4b-2cac-4523-92ef-23a9aea1b763.jpg)
+![app-fwc-07](https://user-images.githubusercontent.com/54412289/196203512-83c8e193-090f-4da6-b775-c11a59fab62d.jpg)
+![app-fwc-08](https://user-images.githubusercontent.com/54412289/196203515-57dce747-8261-4ea8-84b2-0b6adcb66fc9.jpg)
+![app-fwc-09](https://user-images.githubusercontent.com/54412289/196203516-2a06b995-105b-4d7c-b94b-6aac140fc0e0.jpg)
+![app-fwc-10](https://user-images.githubusercontent.com/54412289/196203518-7fc53e84-7116-4670-88ab-e703a222a383.jpg)
+![app-fwc-11](https://user-images.githubusercontent.com/54412289/196203523-55f3095c-29b5-44e3-a30a-b00fe6ed9445.jpg)
+![app-fwc-12](https://user-images.githubusercontent.com/54412289/196203524-007e05fe-cc13-4afe-b525-94a301f8d98f.jpg)
 
 
