@@ -12,7 +12,7 @@ import 'view/sticker_detail_view_impl.dart';
 class StickerDetailPage extends StatefulWidget {
   final StickerDetailPresenter presenter;
 
-  StickerDetailPage({
+  const StickerDetailPage({
     Key? key,
     required this.presenter,
   }) : super(key: key);
