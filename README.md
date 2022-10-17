@@ -14,7 +14,7 @@ Tecnologias Utilizadas: <br/>
 
 * Flutter
 * Arquitetura MVP (Model View Presenter),
-* API RESTFULL
+* API RESTFUL
 * Dio (Http service)
 * flutter_getit (Injeção de Dependencia)
 * Storage (shared_preferences)
