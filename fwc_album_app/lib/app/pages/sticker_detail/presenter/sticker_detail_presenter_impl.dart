@@ -65,9 +65,10 @@ class StickerDetailPresenterImpl implements StickerDetailPresenter {
     try {
       _view.showLoader();
       if (stickerUser == null) {
-        stickersRepository.registerUserSticker(sticker!.id, amount);
+        await stickersRepository.registerUserSticker(sticker!.id, amount);
       } else {
-        stickersRepository.updateUserSticker(stickerUser!.idSticker, amount);
+        await stickersRepository.updateUserSticker(
+            stickerUser!.idSticker, amount);
       }
       _view.saveSuccess();
     } catch (e) {
@@ -81,7 +82,6 @@ class StickerDetailPresenterImpl implements StickerDetailPresenter {
     if (stickerUser != null) {
       await stickersRepository.updateUserSticker(stickerUser!.idSticker, 0);
     }
-
     _view.saveSuccess();
   }
 }
