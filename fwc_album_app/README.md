@@ -1,16 +1,31 @@
 # fwc_album_app
 
-A new Flutter project.
+Projeto Dart Week 8 - Final World Cup
 
-## Getting Started
+Esse evento foi ministrado pela **[@AcademiaDoFlutter](https://academiadoflutter.com.br/)**
 
-This project is a starting point for a Flutter application.
+O projeto do evento, tem a finalidade o controle da quantidade das figurinhas do álbum da copa no Qatar.<br/>
 
-A few resources to get you started if this is your first Flutter project:
+A proposta do app, foi em explicar os conceitos utilizando uma arquitetura MVP (Model View Presenter), utilizando basicamente o setState para controlar o estado, porem de uma forma organizada, aplicando boas práticas, Design Pattern, injeção de dependência, e integrando com backend própria via API RESTFUL com documentação disponibilizada via Swagger.  <br/>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Principais funcionalidades do app: <br/>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Cadastro de usuário, Login, guardar o token autenticado no storare do device, refresh token, listar os álbum, aplicar filtro dos grupo/time, e adicionar a quantidade de figurinhas e as repetidas, como também as exclusão das mesmas. <br/>
+
+Tecnologias Utilizadas: <br/>
+
+* Flutter
+* ArquiteturaMVP (Model View Presenter),
+* API RESTFULL
+* Dio (Http service)
+* flutter_getit (Injeção de Dependencia)
+* Storage (shared_preferences)
+* validatorless (validação de formulario)
+* flutter_awesome_select (Modal de Filtros)
+* loading_animation_widget (animação de loading de transição entre telas)
+* top_snackbar_flutter 
+
+
+
+
+
