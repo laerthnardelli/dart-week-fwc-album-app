@@ -18,7 +18,6 @@ class MyStickersRoute extends FlutterGetItPageRoute {
       ];
 
   @override
-  // TODO: implement page
   WidgetBuilder get page => (context) => MyStickersPage(
         presenter: context.get(),
       );
