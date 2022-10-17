@@ -1,8 +1,6 @@
-# dart-week-fwc-album-app
+# Projeto Dart Week 8 - Fifa World Cup 2022
 
-Projeto Dart Week 8 - Final World Cup
-
-Esse evento foi ministrado pela **[@AcademiaDoFlutter](https://academiadoflutter.com.br/)**
+Esse evento foi ministrado por Rodrigo Rahman da **[@AcademiaDoFlutter](https://academiadoflutter.com.br/)**
 
 O projeto do evento, tem a finalidade o controle da quantidade das figurinhas do álbum da copa no Qatar.<br/>
 
@@ -40,4 +38,8 @@ Imagens App:
 ![app-fwc-11](https://user-images.githubusercontent.com/54412289/196203523-55f3095c-29b5-44e3-a30a-b00fe6ed9445.jpg)
 ![app-fwc-12](https://user-images.githubusercontent.com/54412289/196203524-007e05fe-cc13-4afe-b525-94a301f8d98f.jpg)
 
+Imagens Documentação Swagger:
+![swagger 01](https://user-images.githubusercontent.com/54412289/196213491-a28fb2d6-a466-43f6-947a-6fc23337652c.png)
+![swagger 02](https://user-images.githubusercontent.com/54412289/196213498-de438673-39ad-413b-8062-c081d0d17f6b.png)
+![swagger 03](https://user-images.githubusercontent.com/54412289/196213503-e0c0cfd2-a951-4e5b-a0f6-8091d9c31330.png)
 
