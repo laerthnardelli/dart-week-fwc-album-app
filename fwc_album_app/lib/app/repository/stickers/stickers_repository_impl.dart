@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:fwc_album_app/app/core/exceptions/repositoy_exceptions.dart';
+import 'package:fwc_album_app/app/core/exceptions/repository_exceptions.dart';
 import 'package:fwc_album_app/app/core/rest/custom_dio.dart';
 import 'package:fwc_album_app/app/models/groups_stickers.dart';
 import 'package:fwc_album_app/app/models/register_sticker_model.dart';
@@ -22,7 +22,7 @@ class StickersRepositoryImpl implements StickersRepository {
           .toList();
     } on DioError catch (e, s) {
       log('Erro ao buscar album do usuario', error: e, stackTrace: s);
-      throw RepositoyException(message: 'Erro ao buscar album do usuário');
+      throw RepositoryException(message: 'Erro ao buscar album do usuário');
     }
   }
 
@@ -42,7 +42,7 @@ class StickersRepositoryImpl implements StickersRepository {
         return null;
       }
       log('Erro ao buscar figurinha', error: e, stackTrace: s);
-      throw RepositoyException(message: 'Erro ao buscar figurinha');
+      throw RepositoryException(message: 'Erro ao buscar figurinha');
     }
   }
 
@@ -61,7 +61,8 @@ class StickersRepositoryImpl implements StickersRepository {
       return StickerModel.fromMap(result.data);
     } on DioError catch (e, s) {
       log('Erro ao registrar figurinha no album', error: e, stackTrace: s);
-      throw RepositoyException(message: 'Erro ao registrar figurinha no album');
+      throw RepositoryException(
+          message: 'Erro ao registrar figurinha no album');
     }
   }
 
@@ -75,7 +76,7 @@ class StickersRepositoryImpl implements StickersRepository {
     } on DioError catch (e, s) {
       log('Erro ao inserir figurinha no album do usuário',
           error: e, stackTrace: s);
-      throw RepositoyException(
+      throw RepositoryException(
           message: 'Erro ao inserir figurinha no album do usuário');
     }
   }
@@ -90,7 +91,7 @@ class StickersRepositoryImpl implements StickersRepository {
     } on DioError catch (e, s) {
       log('Erro ao inserir figurinha no album do usuário',
           error: e, stackTrace: s);
-      throw RepositoyException(
+      throw RepositoryException(
           message: 'Erro ao inserir figurinha no album do usuário');
     }
   }

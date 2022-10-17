@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
-import 'package:fwc_album_app/app/core/exceptions/repositoy_exceptions.dart';
+import 'package:fwc_album_app/app/core/exceptions/repository_exceptions.dart';
 import 'package:fwc_album_app/app/core/exceptions/unauthorized_exception.dart';
 import 'package:fwc_album_app/app/core/rest/custom_dio.dart';
 import 'package:fwc_album_app/app/models/register_user_model.dart';
@@ -35,7 +35,7 @@ class AuthRepositoryImpl implements AuthRepository {
         throw UnauthorizedException();
       }
 
-      throw RepositoyException(
+      throw RepositoryException(
           message: 'Erro ao realizar login - RepositoyException');
     }
   }
@@ -52,7 +52,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await dio.unAuth().post('/api/register', data: registerModel.toMap());
     } on DioError catch (e, s) {
       log('Erro ao registrar usuário', error: e, stackTrace: s);
-      throw RepositoyException(message: 'Erro ao registrar usuário');
+      throw RepositoryException(message: 'Erro ao registrar usuário');
     }
   }
 }
