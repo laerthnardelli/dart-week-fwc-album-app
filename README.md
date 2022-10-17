@@ -18,10 +18,10 @@ Tecnologias Utilizadas: <br/>
 * Dio (Http service)
 * flutter_getit (Injeção de Dependencia)
 * Storage (shared_preferences)
-* validatorless (validação de formulario)
+* validatorless (validação de formulário)
 * flutter_awesome_select (Modal de Filtros)
 * loading_animation_widget (animação de loading para transição entre telas)
-* top_snackbar_flutter (notificação para usúario em caso de sucesso ou erro).
+* top_snackbar_flutter (notificação para usuário em caso de sucesso ou erro).
 
 Imagens App:
 
