@@ -51,6 +51,7 @@ class StickersRepositoryImpl implements StickersRepository {
     try {
       final body = FormData.fromMap({
         ...registerStickerModel.toMap(),
+        'sticker_image_upload': ''
         // 'name': registerStickerModel.name,
         // 'sticker_code': registerStickerModel.stickerCode,
         // 'sticker_number': registerStickerModel.stickerNumber,
